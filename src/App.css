@@ -1,0 +1,209 @@
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  height: 100vh
+}
+
+.left-align {
+  text-align: left;
+}
+
+.smallText {
+  font-size: 2rem;
+}
+
+.slideshows {
+  flex: 1
+}
+
+.scrolling {
+  overflow-y: scroll;
+  max-height: 80vh;
+  width: 100%;
+}
+
+.scrolling.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 12px;
+}
+
+.slideshow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2rem;
+  height: 100%;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.green-text {
+  color: #393
+}
+
+.red-text {
+  color: #933
+}
+
+.top-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 50px;
+}
+
+.scores {
+  height: 12.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.playerScoreBox {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem
+}
+
+.playerScoreBox input {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.0);
+  width: 50%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.jeopardy-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 100px);
+  gap: 4px;
+
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.category,
+.clue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+
+  font-weight: bold;
+  text-align: center;
+}
+
+.category {
+  font-size: 20px;
+}
+
+.clue {
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.clue.opened {
+  color: rgba(255, 255, 255, 0.25)
+}
+
+.clue:hover {
+  background: #333;
+}
+
+.dialog-container {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+.dialog-panel {
+  position: relative;
+  top: 8vh;
+  left: 8vw;
+
+  width: calc(84vw);
+  height: calc(80vh);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(10, 10, 10, 0.95);
+  color: white;
+
+  border: 4px solid white;
+  border-radius: 8px;
+  padding: 2rem;
+
+  text-align: center;
+  font-size: 3rem;
+}
+
+.dialog-header {
+  flex: 0 0 75px;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.dialog-buttons {
+  flex: 0 0 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.dialog-buttons button {
+  font-size: 2rem;
+}
+
+.dialog-content-container {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+
+  display: grid;
+
+  /*
+   * Video gets all remaining space.
+   * Text gets exactly the space it needs.
+   */
+  grid-template-rows: minmax(0, 1fr) auto;
+
+  align-items: center;
+  justify-items: center;
+}
+
+.dialog-content-container video {
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+}
+
+.dialog-content-container>span {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.dialog-content-container hr {
+  margin: 0.5rem 0;
+}
+
+.dialog-content-container p {
+  margin: 0;
+}
